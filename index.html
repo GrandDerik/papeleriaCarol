@@ -96,7 +96,7 @@
             color: #ffca28; /* Amarillo Carol */
         }
 
-        /* Menú hamburguesa (oculto por defecto) */
+        /* Menú hamburguesa */
         .menu-toggle {
             display: none;
             cursor: pointer;
@@ -104,14 +104,15 @@
             color: #1a428a;
         }
 
-        /* Hero Section (Banner) */
+        /* Hero Section (Banner) Corregido */
         .hero {
             position: relative;
-            background-color: #1a428a; /* Fondo azul */
+            background-color: #1a428a; /* Fondo azul de respaldo */
             color: #fff;
             text-align: center;
             padding: 100px 0;
             overflow: hidden;
+            z-index: 1;
         }
 
         .hero-bg {
@@ -120,16 +121,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('./banner.jpg'); /* Ruta explícita corregida */
+            background-image: linear-gradient(rgba(26, 66, 138, 0.75), rgba(26, 66, 138, 0.75)), url('banner.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.3; /* Imagen de fondo transparente */
             z-index: -1;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
         }
 
         .hero-title {
@@ -240,8 +241,10 @@
 
         .services-image-container img {
             max-width: 100%;
+            height: auto;
             display: block;
             margin: 0 auto;
+            border-radius: 8px;
         }
 
         /* Sección de Visítanos / Productos */
@@ -391,7 +394,7 @@
             }
 
             .nav-links {
-                display: none; /* Ocultar por defecto para el menú hamburguesa */
+                display: none;
                 width: 100%;
                 flex-direction: column;
                 gap: 10px;
@@ -407,13 +410,12 @@
             }
 
             .menu-toggle {
-                display: block; /* Mostrar menú hamburguesa */
+                display: block;
                 position: absolute;
                 top: 30px;
                 right: 20px;
             }
 
-            /* Mostrar nav al hacer clic */
             .nav-links.show {
                 display: flex;
             }
@@ -431,7 +433,7 @@
             }
 
             .services-wrapper {
-                flex-direction: column-reverse; /* Imagen primero, luego lista */
+                flex-direction: column-reverse;
                 padding: 30px;
             }
 
@@ -576,7 +578,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <strong>Dirección:</strong><br>
-                            Lomas de funval, Estado Carabobo, Venezuela.
+                            Mariara, Estado Carabobo, Venezuela.
                         </div>
                     </div>
                     <div class="contact-item">
@@ -620,10 +622,8 @@
     </footer>
 
     <script>
-        // Actualizar el año en el copyright
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Funcionalidad del menú hamburguesa
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -631,7 +631,6 @@
             navLinks.classList.toggle('show');
         });
 
-        // Ocultar el menú al hacer clic en un enlace
         navLinks.addEventListener('click', (event) => {
             if (event.target.tagName === 'A') {
                 navLinks.classList.remove('show');
