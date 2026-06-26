@@ -104,33 +104,20 @@
             color: #1a428a;
         }
 
-        /* Hero Section (Banner) Corregido a PNG */
+        /* SOLUCIÓN AL BANNER: Imagen integrada directamente en el contenedor */
         .hero {
-            position: relative;
-            background-color: #1a428a; /* Fondo azul de respaldo */
-            color: #fff;
-            text-align: center;
-            padding: 100px 0;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(26, 66, 138, 0.75), rgba(26, 66, 138, 0.75)), url('banner.png'); /* Actualizado a PNG */
+            background-image: linear-gradient(rgba(26, 66, 138, 0.8), rgba(26, 66, 138, 0.8)), url('banner.png');
             background-size: cover;
             background-position: center;
-            z-index: -1;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
         }
 
         .hero-title {
@@ -307,23 +294,19 @@
             padding-right: 40px;
         }
 
+        /* Contenedor del Mapa Ajustado */
         .map-container {
             flex: 1;
             height: 400px;
-            background-color: #eee;
             border-radius: 10px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border: 2px solid #ddd;
         }
 
-        .map-container a {
-            font-size: 1.2rem;
-            color: #1a428a;
-            font-weight: 700;
-            text-decoration: underline;
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         .contact-item {
@@ -502,7 +485,6 @@
     </header>
 
     <section id="hero" class="hero">
-        <div class="hero-bg"></div>
         <div class="container hero-content">
             <h1 class="hero-title">QUINCALLA Y PAPELERÍA</h1>
             <h2 class="hero-subtitle">TODO LO QUE NECESITAS EN UN SOLO LUGAR</h2>
@@ -524,7 +506,7 @@
             <h2 class="section-title">NUESTROS SERVICIOS</h2>
             <div class="services-wrapper">
                 <div class="services-image-container">
-                    <img src="utiles-escolares.png" alt="Panel de servicios de Papelería Carol"> <!-- Actualizado a PNG -->
+                    <img src="utiles-escolares.png" alt="Panel de servicios de Papelería Carol">
                 </div>
                 <div class="services-list-container">
                     <ul class="services-list">
@@ -597,11 +579,15 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- PREVISUALIZACIÓN REAL DE GOOGLE MAPS -->
                 <div class="map-container">
-                    <a href="https://maps.app.goo.gl/794zY5PdMBAHaCMH6" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 10px;"></i><br>
-                        Ver ubicación en Google Maps
-                    </a>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15702.345831557997!2d-67.72145895!3d10.29487545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803c6239bc7a61%3A0x794zY5PdMBAHaCMH6!2sMariara%2C%20Carabobo!5e0!3m2!1ses!2sve!4v1719415200000!5m2!1ses!2sve" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
