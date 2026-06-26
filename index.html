@@ -104,7 +104,7 @@
             color: #1a428a;
         }
 
-        /* SOLUCIÓN AL BANNER: Imagen integrada directamente en el contenedor */
+        /* Hero Section (Banner) */
         .hero {
             background-image: linear-gradient(rgba(26, 66, 138, 0.8), rgba(26, 66, 138, 0.8)), url('banner.png');
             background-size: cover;
@@ -294,19 +294,44 @@
             padding-right: 40px;
         }
 
-        /* Contenedor del Mapa Ajustado */
-        .map-container {
+        /* MAPA MEJORADO: Simulación visual interactiva de Google Maps */
+        .map-link-container {
             flex: 1;
             height: 400px;
             border-radius: 10px;
             overflow: hidden;
             border: 2px solid #ddd;
+            position: relative;
+            background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.4)), url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-67.7214,10.2948,14,0/600x400?access_token=pk.eyJ1IjoibWFwYm94Ym90IiwiYSI6ImNreTZnd3pqZzBicXUydm8xeG1wY3R6b3kifQ.93a3F_34G');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .map-link-container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .map-badge {
+            background-color: #fff;
+            color: #1a428a;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            display: inline-block;
+        }
+
+        .map-badge i {
+            color: #ea4335; /* Rojo clásico de marcador de mapas */
+            font-size: 1.5rem;
+            margin-bottom: 5px;
         }
 
         .contact-item {
@@ -460,7 +485,7 @@
                 width: 100%;
             }
 
-            .map-container {
+            .map-link-container {
                 width: 100%;
                 height: 300px;
             }
@@ -560,7 +585,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <strong>Dirección:</strong><br>
-                            Mariara, Estado Carabobo, Venezuela.
+                            Lomas de Funval, Estado Carabobo, Venezuela.
                         </div>
                     </div>
                     <div class="contact-item">
@@ -580,15 +605,13 @@
                     </div>
                 </div>
                 
-                <!-- PREVISUALIZACIÓN REAL DE GOOGLE MAPS -->
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15702.345831557997!2d-67.72145895!3d10.29487545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803c6239bc7a61%3A0x794zY5PdMBAHaCMH6!2sMariara%2C%20Carabobo!5e0!3m2!1ses!2sve!4v1719415200000!5m2!1ses!2sve" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+                <!-- PREVISUALIZACIÓN VISUAL SEGURA ENLAZADA A GOOGLE MAPS -->
+                <a href="https://maps.app.goo.gl/794zY5PdMBAHaCMH6" target="_blank" rel="noopener noreferrer" class="map-link-container">
+                    <div class="map-badge">
+                        <i class="fas fa-map-marker-alt"></i><br>
+                        Abrir Papelería Carol en Google Maps
+                    </div>
+                </a>
             </div>
         </div>
     </section>
